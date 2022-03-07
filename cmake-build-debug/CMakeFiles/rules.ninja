@@ -42,7 +42,7 @@ rule CXX_EXECUTABLE_LINKER__Project_1___Web_Browser_Debug
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = "/Users/patrick/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/CLion.app/Contents/bin/cmake/mac/bin/cmake" --regenerate-during-build -S"/Users/patrick/CS142/Project 1 - Web Browser" -B"/Users/patrick/CS142/Project 1 - Web Browser/cmake-build-debug"
+  command = "/Users/patrick/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/CLion.app/Contents/bin/cmake/mac/bin/cmake" --regenerate-during-build -S/Users/patrick/Documents/GitHub/142-project-1 -B/Users/patrick/Documents/GitHub/142-project-1/cmake-build-debug
   description = Re-running CMake...
   generator = 1
 

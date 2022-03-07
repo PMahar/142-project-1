@@ -3,4 +3,4 @@ project(Project_1___Web_Browser)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Project_1___Web_Browser main.cpp)
+add_executable(Project_1___Web_Browser Buffer.h FileViewer.h test.cpp Buffer.cpp FileViewer.cpp)

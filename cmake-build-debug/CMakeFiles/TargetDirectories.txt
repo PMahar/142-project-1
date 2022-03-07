@@ -1,3 +1,3 @@
-/Users/patrick/CS142/Project 1 - Web Browser/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/patrick/CS142/Project 1 - Web Browser/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/patrick/CS142/Project 1 - Web Browser/cmake-build-debug/CMakeFiles/Project_1___Web_Browser.dir
+/Users/patrick/Documents/GitHub/142-project-1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/patrick/Documents/GitHub/142-project-1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/patrick/Documents/GitHub/142-project-1/cmake-build-debug/CMakeFiles/Project_1___Web_Browser.dir

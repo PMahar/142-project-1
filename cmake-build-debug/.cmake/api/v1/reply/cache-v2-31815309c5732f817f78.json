@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/patrick/CS142/Project 1 - Web Browser/cmake-build-debug"
+			"value" : "/Users/patrick/Documents/GitHub/142-project-1/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -139,10 +139,10 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "CXX compiler"
+					"value" : "No help, variable specified on the command line."
 				}
 			],
-			"type" : "STRING",
+			"type" : "UNINITIALIZED",
 			"value" : "/usr/bin/g++"
 		},
 		{
@@ -235,10 +235,10 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "C compiler"
+					"value" : "No help, variable specified on the command line."
 				}
 			],
-			"type" : "STRING",
+			"type" : "UNINITIALIZED",
 			"value" : "/usr/bin/gcc"
 		},
 		{
@@ -515,7 +515,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/patrick/CS142/Project 1 - Web Browser"
+			"value" : "/Users/patrick/Documents/GitHub/142-project-1"
 		},
 		{
 			"name" : "CMAKE_INSTALL_NAME_TOOL",
@@ -1087,7 +1087,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/patrick/CS142/Project 1 - Web Browser/cmake-build-debug"
+			"value" : "/Users/patrick/Documents/GitHub/142-project-1/cmake-build-debug"
 		},
 		{
 			"name" : "Project_1___Web_Browser_IS_TOP_LEVEL",
@@ -1111,7 +1111,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/patrick/CS142/Project 1 - Web Browser"
+			"value" : "/Users/patrick/Documents/GitHub/142-project-1"
 		}
 	],
 	"kind" : "cache",

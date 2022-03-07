@@ -1,4 +1,4 @@
-# Install script for directory: /Users/patrick/CS142/Project 1 - Web Browser
+# Install script for directory: /Users/patrick/Documents/GitHub/142-project-1
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/patrick/CS142/Project 1 - Web Browser/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/patrick/Documents/GitHub/142-project-1/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

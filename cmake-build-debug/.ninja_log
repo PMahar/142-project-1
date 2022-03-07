@@ -1,0 +1,5 @@
+# ninja log v5
+0	350	1646693667162923380	CMakeFiles/Project_1___Web_Browser.dir/test.cpp.o	a40a3a43af5d9344
+0	359	1646693667172937067	CMakeFiles/Project_1___Web_Browser.dir/FileViewer.cpp.o	5ced85cd3c34a558
+0	388	1646693667202014172	CMakeFiles/Project_1___Web_Browser.dir/Buffer.cpp.o	962607b063f81ba4
+388	426	1646693667241870946	Project_1___Web_Browser	9258b4f02823d640
