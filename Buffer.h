@@ -17,6 +17,7 @@ public:
     void move_to_next_page();
     void move_to_previous_page();
     bool open(const std::string & file_name);
+    bool search(const std::string & substring);
     void set_window_height(int h) { window_height_ = h; }
 
 private:

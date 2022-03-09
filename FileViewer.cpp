@@ -25,7 +25,7 @@ void FileViewer::display()
     cout << long_separator << endl;
     buffer_.display();
     cout << long_separator << endl;
-    cout << "  next  previous  open  quit\n";
+    cout << "  next  previous  open  search  quit\n";
     cout << short_separator << endl;
 }
 
@@ -55,12 +55,25 @@ void FileViewer::execute_command(char command, bool & done)
             done = true;
             break;
         }
+
+        case 's': {
+            cout << "search string: ";
+            string search_string;
+            getline(cin, search_string);
+            if (!buffer_.search(search_string)) {
+                error_message_ = "ERROR: string " + search_string + " was not found";
+            }
+            cout << endl;
+            display();
+
+            break;
+        }
     }
 }
 
 void FileViewer::run()
 {
-    cout << "Window height? ";
+    cout << "Window height: ";
     cin >> window_height_;
     cin.get();  // '\n'
     cout << '\n';
