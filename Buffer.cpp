@@ -21,8 +21,7 @@ bool Buffer::open(const string & new_file_name)
         return false;
 
     v_lines_.clear();
-    // Note: the vector is cleared only after we know the file
-    // opened successfully.
+    // Note: the vector is cleared only after we know the file opened successfully.
 
     string line;
     while (getline(file, line))

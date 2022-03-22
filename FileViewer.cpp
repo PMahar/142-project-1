@@ -61,10 +61,10 @@ void FileViewer::execute_command(char command, bool & done)
             string search_string;
             getline(cin, search_string);
             if (!buffer_.search(search_string)) {
-                error_message_ = "ERROR: string " + search_string + " was not found";
+                error_message_ = "string " + search_string + " was not found";
             }
-            cout << endl;
-            display();
+            // cout << endl;
+            //display();
 
             break;
         }
