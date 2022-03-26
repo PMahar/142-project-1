@@ -34,31 +34,46 @@ bool Buffer::open(const string & new_file_name)
 
 std::string Buffer::populate_anchors(const std::string &anchor_line) {
     stringstream anchor_content;
-    string reference_title;
+    stringstream print_line;
     string reference_file;
+    string reference_title;
     anchor_content << anchor_line;
     anchor_content.ignore(); // '<'
     anchor_content.ignore(); //'a'
-    anchor_content >> reference_title;
     anchor_content >> reference_file;
+    anchor_content >> reference_title;
+    for (int i = 0; i < v_anchors_.size(); i++) {
+        if (v_anchors_[i] == reference_file) {
+            print_line << reference_title << "[" << i + 1<< "]";
+            return print_line.str();
+        }
+    }
     v_anchors_.push_back(reference_file);
-    return reference_title;
+    print_line << reference_title << "[" << v_anchors_.size() << "]";
+    return print_line.str();
 }
 
-void Buffer::format_display() {
-    for (string l: v_lines_) {
+bool Buffer::go(int link_number) {
+    if (!(isdigit(link_number)) || link_number < 1 || link_number > v_anchors_.size())
+        return false;
+    open(v_anchors_[link_number + 1]);
+    return true;
+}
+
+void Buffer::format() {
+    for (const string& line : v_lines_) {
         std::stringstream line_content;
-        line_content << l;
+        line_content << line;
         string word;
+        string line_substr = line_content.str();
         while (line_content >> word) {
             if (word == "<a") {
-                //string reference_title = populate_anchors(word);
-                //cout << "[" << reference_title << "]" << v_anchors_.size() + 1;
-                string anchor_content;
-                int tag_begin = line_content.str().find('<');
-                int tag_end = line_content.str().find('>');
-                anchor_content = line_content.str().substr(tag_begin, tag_end);
-                cout << "<" << populate_anchors(anchor_content) << ">" << "[" << v_anchors_.size() << "] ";
+                string anchor_line;
+                int tag_begin = line_substr.find('<');
+                int tag_end = line_substr.find('>');
+                anchor_line = line_substr.substr(tag_begin);
+                cout << "<" << populate_anchors(anchor_line);
+                line_substr = line_substr.substr(tag_end + 1);
                 line_content >> word;
                 line_content >> word;
             } else {

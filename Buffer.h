@@ -18,7 +18,9 @@ public:
     void move_to_previous_page();
     bool open(const std::string & file_name);
     std::string populate_anchors(const std::string &anchor_line);
-    void format_display();
+    void format();
+    int search_anchor(std::string anchor);
+    bool go(int link_number);
     bool search(const std::string & substring);
     void set_window_height(int h) { window_height_ = h; }
 

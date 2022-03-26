@@ -44,7 +44,7 @@ void FileViewer::execute_command(char command, bool & done)
             if (!buffer_.open(file_name))
                 error_message_ = "Could not open " + file_name;
             cout << "FORMATTED:\n";
-            buffer_.format_display();
+            buffer_.format();
             break;
         }
 
@@ -68,6 +68,16 @@ void FileViewer::execute_command(char command, bool & done)
             // cout << endl;
             //display();
 
+            break;
+        }
+
+        case 'g': {
+            cout << "link number: ";
+            int link_number;
+            cin >> link_number;
+            if (!buffer_.go(link_number)) {
+                error_message_ = "Invalid link number.";
+            }
             break;
         }
     }

@@ -9,8 +9,8 @@
 
 #include "Buffer.h"
 
-const char clear_command[] = "cls"; // for Windows
-//const char clear_command[] = "clear"; // for Linux and possibly Mac's
+//const char clear_command[] = "cls"; // for Windows
+const char clear_command[] = "clear"; // for Linux and possibly Mac's
 
 class FileViewer
 {
