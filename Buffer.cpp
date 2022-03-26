@@ -32,34 +32,43 @@ bool Buffer::open(const string & new_file_name)
     return true;
 }
 
-void Buffer::populate_anchors() {
-    for (std::string x : v_lines_) {
-        string anchor_content;
-        std::stringstream line_stream;
-        line_stream << x;
-        string line_content;
-        int tag_begin = x.find('<');
-        int tag_end = x.find('>');
-        if (tag_begin != std::string::npos) {
-            anchor_content = x.substr(tag_begin, tag_end + 1);
-            v_anchors_.push_back(anchor_content);
-            if (tag_end + 1 != x.length()) {
-                string line_remainder = x.substr(tag_end + 1);
-                tag_begin = ((line_remainder).find('<'));
-                if (tag_begin != std::string::npos) {
-                    tag_end = line_remainder.find('>');
-                    anchor_content = line_remainder.substr(tag_begin, tag_end + 1);
-                    v_anchors_.push_back(anchor_content);
-                }
-            }
-        }
-    }
+std::string Buffer::populate_anchors(const std::string &anchor_line) {
+    stringstream anchor_content;
+    string reference_title;
+    string reference_file;
+    anchor_content << anchor_line;
+    anchor_content.ignore(); // '<'
+    anchor_content.ignore(); //'a'
+    anchor_content >> reference_title;
+    anchor_content >> reference_file;
+    v_anchors_.push_back(reference_file);
+    return reference_title;
 }
 
-/*void Buffer::print_anchors() {
-    for (string x : v_anchors_)
-        std::cout << x << endl;
-}*/
+void Buffer::format_display() {
+    for (string l: v_lines_) {
+        std::stringstream line_content;
+        line_content << l;
+        string word;
+        while (line_content >> word) {
+            if (word == "<a") {
+                //string reference_title = populate_anchors(word);
+                //cout << "[" << reference_title << "]" << v_anchors_.size() + 1;
+                string anchor_content;
+                int tag_begin = line_content.str().find('<');
+                int tag_end = line_content.str().find('>');
+                anchor_content = line_content.str().substr(tag_begin, tag_end);
+                cout << "<" << populate_anchors(anchor_content) << ">" << "[" << v_anchors_.size() << "] ";
+                line_content >> word;
+                line_content >> word;
+            } else {
+                cout << word;
+                cout << ' ';
+            }
+        }
+        cout << endl;
+    }
+}
 
 bool Buffer::search(const string & substring)
 {

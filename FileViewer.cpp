@@ -43,11 +43,8 @@ void FileViewer::execute_command(char command, bool & done)
             getline(cin, file_name);
             if (!buffer_.open(file_name))
                 error_message_ = "Could not open " + file_name;
-
-            buffer_.populate_anchors();
-
-            //cout << "FOUND ANCHORS:\n";
-            //buffer_.print_anchors();
+            cout << "FORMATTED:\n";
+            buffer_.format_display();
             break;
         }
 
