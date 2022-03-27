@@ -23,6 +23,7 @@ private:
 
     Buffer buffer_;
     int window_height_;
+    int window_width_;
     std::string error_message_;
 };
 

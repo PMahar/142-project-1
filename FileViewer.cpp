@@ -23,9 +23,10 @@ void FileViewer::display()
         cout << file_name << endl;
 
     cout << long_separator << endl;
+    buffer_.format_lines();
     buffer_.display();
     cout << long_separator << endl;
-    cout << "  next  previous  open  search  quit\n";
+    cout << "  next  previous  open  search  go  quit\n";
     cout << short_separator << endl;
 }
 
@@ -43,8 +44,6 @@ void FileViewer::execute_command(char command, bool & done)
             getline(cin, file_name);
             if (!buffer_.open(file_name))
                 error_message_ = "Could not open " + file_name;
-            cout << "FORMATTED:\n";
-            buffer_.format();
             break;
         }
 
@@ -65,8 +64,6 @@ void FileViewer::execute_command(char command, bool & done)
             if (!buffer_.search(search_string)) {
                 error_message_ = "string \'" + search_string + "\' was not found";
             }
-            // cout << endl;
-            //display();
 
             break;
         }
@@ -88,8 +85,12 @@ void FileViewer::run()
     cout << "Window height: ";
     cin >> window_height_;
     cin.get();  // '\n'
-    cout << '\n';
     buffer_.set_window_height(window_height_);
+    cout << '\n';
+    cout << "Window width: ";
+    cin >> window_width_;
+    cin.get();
+    buffer_.set_window_width(window_width_);
 
     bool done = false;
     while (!done) {
